@@ -1,4 +1,4 @@
-import { Decimal, DocumentType, Prisma, TransactionType, UserRole } from "@prisma/client";
+import { DocumentType, Prisma, TransactionType, UserRole } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { buildAuditRecord } from "@/lib/audit";
 import { uploadBlob } from "@/lib/blob";
@@ -7,7 +7,7 @@ import { log } from "@/lib/logger";
 import { buildReceiptPdf } from "@/lib/receipt";
 import { buildReference, buildRequestId } from "@/lib/utils";
 
-function decimalToNumber(value: Decimal | Prisma.Decimal | number | string) {
+function decimalToNumber(value: Prisma.Decimal | number | string) {
   return Number(value);
 }
 
